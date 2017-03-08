@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">MVPSampleWithFragments</string>
+    <string name="noInternet">Check your internet connection.</string>
+    <string name="logging">Logging...</string>
+    <string name="serverError">Server is not responding</string>
+    <string name="emptyEmail">Email cannot be left blank</string>
+    <string name="invalidEmail">Invalid email format</string>
+    <string name="emptyPassword">Password required</string>
+    <string name="signUp">Sign Up</string>
+    <string name="login">Login</string>
+    <string name="forgotPassword">Forgot Password</string>
+</resources>
