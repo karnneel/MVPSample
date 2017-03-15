@@ -33,7 +33,6 @@ public class LoginFragment extends BaseFragment implements LoginView, View.OnCli
 
     private LoginPresenterImplementation presenter;
     private EditText email, password;
-    private Button loginBtn;
 
     /**
      * Called to do initial creation of a fragment.  This is called after
@@ -83,18 +82,21 @@ public class LoginFragment extends BaseFragment implements LoginView, View.OnCli
 
         email = (EditText) rootView.findViewById(R.id.et_email);
         password = (EditText) rootView.findViewById(R.id.et_password);
-        loginBtn = (Button) rootView.findViewById(R.id.btn_login);
+        Button loginBtn = (Button) rootView.findViewById(R.id.btn_login);
 
         loginBtn.setOnClickListener(this);
         return rootView;
     }
 
 
+    /**
+     * @param view
+     */
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.btn_login:
-                if (networkConnectivity.isInternetConnectionAvaliable())
+                if (networkConnectivity.isInternetConnectionAvaliable(getActivity()))
                     presenter.login(new LoginRequest(email.getText().toString().trim(), password.getText().toString().trim(), "", "", DEVICE_TYPE));
                 else
                     ((LoginActivity) getActivity()).ShowSnackbar(getString(R.string.noInternet));

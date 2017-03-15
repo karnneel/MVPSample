@@ -6,7 +6,6 @@ import android.support.v4.util.LruCache;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.trantorinc.mvpsamplewithfragments.networkapi.NetworkAPI;
-import com.trantorinc.mvpsamplewithfragments.utilities.Constants;
 
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;

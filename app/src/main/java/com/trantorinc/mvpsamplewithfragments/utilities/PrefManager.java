@@ -18,41 +18,62 @@ public final class PrefManager {
     private Editor editor;
 
     private static PrefManager instance = new PrefManager();
-    private static Context context;
 
     public static PrefManager getInstance(Context ctx) {
-        context = ctx;
         prefs = ctx.getSharedPreferences(Constants.APP_SHARED_PREFERENCES, Context.MODE_PRIVATE);
         return instance;
     }
 
-
+    /**
+     * @param key
+     * @param value
+     */
     public void storeString(String key, String value) {
         editor = prefs.edit();
         editor.putString(key, value);
         editor.apply();
     }
 
+    /**
+     * @param key
+     * @return
+     */
     public String getString(String key) {
         return prefs.getString(key, "");
     }
 
+    /**
+     * @param key
+     * @param value
+     */
     public void storeInteger(String key, int value) {
         editor = prefs.edit();
         editor.putInt(key, value);
         editor.apply();
     }
 
+    /**
+     * @param key
+     * @return
+     */
     public int getInteger(String key) {
         return prefs.getInt(key, 0);
     }
 
+    /**
+     * @param key
+     * @param value
+     */
     public void storeBoolean(String key, boolean value) {
         editor = prefs.edit();
         editor.putBoolean(key, value);
         editor.apply();
     }
 
+    /**
+     * @param key
+     * @return
+     */
     public boolean getBoolean(String key) {
         return prefs.getBoolean(key, false);
     }
@@ -72,11 +93,12 @@ public final class PrefManager {
         }
     }
 
+    /**
+     *
+     */
     public void clearAllPreferences() {
         editor = prefs.edit();
         editor.clear();
         editor.apply();
     }
-
-
 }

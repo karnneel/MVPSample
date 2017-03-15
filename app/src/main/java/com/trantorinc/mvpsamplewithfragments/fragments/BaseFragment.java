@@ -31,7 +31,7 @@ public class BaseFragment extends Fragment {
         super.onAttach(context);
 
         service = RxApplication.getNetworkService();
-        networkConnectivity = NetworkConnectivity.getInstance(context);
+        networkConnectivity = NetworkConnectivity.getInstance();
 
         pd = new ProgressDialog(context);
         pd.setMessage(getString(R.string.logging));

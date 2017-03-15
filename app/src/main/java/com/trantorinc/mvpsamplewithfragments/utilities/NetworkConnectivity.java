@@ -13,12 +13,9 @@ import com.trantorinc.mvpsamplewithfragments.logger.AppLogger;
 
 public final class NetworkConnectivity {
 
-    static Context context;
     private static NetworkConnectivity instance = new NetworkConnectivity();
-    ConnectivityManager connectivityManager;
 
-    public static NetworkConnectivity getInstance(Context ctx) {
-        context = ctx;
+    public static NetworkConnectivity getInstance() {
         return instance;
     }
 
@@ -27,7 +24,7 @@ public final class NetworkConnectivity {
      *
      * @return true if internet is available else false
      */
-    public boolean isInternetConnectionAvaliable() {
+    public boolean isInternetConnectionAvaliable(Context context) {
         if (null == context) {
             return true;
         }
